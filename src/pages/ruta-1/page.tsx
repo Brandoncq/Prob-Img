@@ -14,8 +14,8 @@ function ImagePage({ images }: ImagePageProps) {
     <Card title="INGRESE">
       <div className="w-full">
         <div className="w-full flex flex-col h-lvh justify-center items-center p-10 bg-[url(/tinified/bg.jpg)] bg-no-repeat bg-cover bg-center">
-          <div className="w-1/2">
-            <p className="text-lg font-light text-center">
+          <div className="w-full lg:w-1/2">
+            <p className="text-sm lg:text-lg font-light text-center">
               What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
               printing and typesetting industry. Lorem Ipsum has been the
               industry's standard dummy text ever since the 1500s, when an
@@ -35,8 +35,8 @@ function ImagePage({ images }: ImagePageProps) {
           </div>
         </div>
         <div className="w-full flex flex-col h-lvh justify-center items-center p-10 bg-[url(/tinified/bg-1.jpg)] bg-no-repeat bg-cover bg-center">
-          <div className="w-1/2">
-            <p className="text-lg font-light text-center">
+          <div className="w-full lg:w-1/2">
+            <p className="text-sm lg:text-lg font-light text-center">
               What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
               printing and typesetting industry. Lorem Ipsum has been the
               industry's standard dummy text ever since the 1500s, when an
