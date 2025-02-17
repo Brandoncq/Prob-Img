@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 type Image = {
   src: string;
   alt: string;
@@ -24,7 +24,11 @@ type ImageGridProps = {
   mobileColumns?: number;
 };
 
-export default function ImageGrid({ images, columns = 3, mobileColumns = 1 }: ImageGridProps) {
+export default function ImageGrid({
+  images,
+  columns = 3,
+  mobileColumns = 1,
+}: ImageGridProps) {
   const [resizedImages, setResizedImages] = useState<ResizedImage[]>([]);
   const [columnsData, setColumnsData] = useState<ColumnData[]>([]);
   const [currentColumns, setCurrentColumns] = useState<number>(columns);
@@ -79,7 +83,10 @@ export default function ImageGrid({ images, columns = 3, mobileColumns = 1 }: Im
     }));
 
     resizedImages.forEach((img) => {
-      const column = cols.reduce((minCol, col) => (col.height < minCol.height ? col : minCol), cols[0]);
+      const column = cols.reduce(
+        (minCol, col) => (col.height < minCol.height ? col : minCol),
+        cols[0]
+      );
       column.images.push(img);
       column.height += img.height;
     });
@@ -88,7 +95,10 @@ export default function ImageGrid({ images, columns = 3, mobileColumns = 1 }: Im
   }, [resizedImages, currentColumns]);
 
   return (
-    <div ref={containerRef} style={{ display: "flex", gap: 8,overflow: "hidden",width: "100%" }}>
+    <div
+      ref={containerRef}
+      style={{ display: "flex", gap: 8, overflow: "hidden", width: "100%" }}
+    >
       {columnsData.map((col, index) => (
         <div
           key={index}
@@ -107,10 +117,9 @@ export default function ImageGrid({ images, columns = 3, mobileColumns = 1 }: Im
               width={img.width}
               height={img.height}
               style={{
-                width: "100%",
-                height: "auto",
                 animation: "fadeIn 0.5s ease-out forwards",
               }}
+              effect="blur"
             />
           ))}
         </div>
